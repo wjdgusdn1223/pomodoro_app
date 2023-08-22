@@ -54,8 +54,9 @@ class _HomeScreenState extends State<HomeScreen> {
   void onResetPressed() {
     if (isRunning) {
       timer.cancel();
-
-      isRunning = false; // update ui when totalSeconds reset
+      setState(() {
+        isRunning = false;
+      });
     }
     if (totalSeconds != twentyFiveMinutes) {
       setState(() {
